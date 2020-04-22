@@ -9,7 +9,7 @@ public enum Places {
 		this.fld = string;
 	}
 
-	private String getFeild() {
+	public String getField() {
 		return fld;
 	}
 }

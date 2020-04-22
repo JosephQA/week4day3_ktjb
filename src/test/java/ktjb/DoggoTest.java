@@ -1,5 +1,9 @@
 package ktjb;
 
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
 import Doggo.Doggo;
 
 public class DoggoTest {

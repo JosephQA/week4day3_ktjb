@@ -1,5 +1,5 @@
 package Doggo;
-import Doggo.Places;
+
 public class Doggo {
 
 
@@ -11,11 +11,21 @@ public class Doggo {
 		//where xx is places.getSuffixFeild(j).getFeild()
 		for(int j = 1;j <=100;j++) {
 			if(j == i) {continue;}
-			Places[] suffx = Places.values();
-			
-			retstr = retstr;  
+			int last = getlastint(j);
+			String suffix;
+			switch(last) {
+			case 1: suffix = "st";break;
+			case 2: suffix = "nd";break;
+			case 3: suffix = "rd";break;
+			default: suffix = "th";break;
+			}
+			if(j == 11|| j == 12 || j == 13) {suffix = "th";}
+			retstr = retstr + j +suffix + ", ";
+		 
 		}
-		//remove trailing comma
+		//remove trailing comma and space
+		retstr = retstr.substring(0, retstr.length() - 1);
+		retstr = retstr.substring(0, retstr.length() - 1);
 		return retstr;
 	}
 	private int getlastint(int i) {
@@ -24,10 +34,8 @@ public class Doggo {
 		int n = Integer.parseInt(ii.substring(ii.length()-1));
 		return n;
 	}
-	public String getsuffixFeild(int i) {
-		Places[] arr = Places.values();
-		return arr[i - 1].name();
-	}
+	
+	
 }
 
 
